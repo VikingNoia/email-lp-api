@@ -10,6 +10,7 @@ API_TOKEN = 'f7f87d2ae8ef6f2fe57bb87fc81ee095c317261659713181118562cade7ef514a14
 LIST_ID = 1
 HEADERS = {'Api-Token': API_TOKEN}
 MENSAGEM_DE_RESPOSTA = "Exemplo"
+MENSAGEM_DE_ERRO_EMAIL = "Erro"
 
 @app.route('/email', methods=['POST'])
 def save_email():
@@ -28,7 +29,14 @@ def save_email():
     )
 
     if create_contact_response.status_code != 201:
-        return jsonify({'error': 'Failed to create contact'}), 500
+        return jsonify({
+        'message': 'Erro ao adicionar e-mail.',
+        'replies': [
+            {
+                'message': MENSAGEM_DE_ERRO_EMAIL
+            }
+        ]
+    }), 400
 
     contact_id = create_contact_response.json()['contact']['id']
 
