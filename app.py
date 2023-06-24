@@ -30,13 +30,12 @@ def save_email():
 
     if create_contact_response.status_code != 201:
         return jsonify({
-        'message': 'Erro ao adicionar e-mail.',
-        'replies': [
-            {
-                'message': MENSAGEM_DE_ERRO_EMAIL
-            }
-        ]
-    }), 400
+    "replies": [
+        {
+            "message": MENSAGEM_DE_ERRO_EMAIL
+        }
+    ]
+})
 
     contact_id = create_contact_response.json()['contact']['id']
 
