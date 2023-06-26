@@ -9,8 +9,8 @@ API_URL = 'https://killerdroom.api-us1.com/api/3'
 API_TOKEN = 'f7f87d2ae8ef6f2fe57bb87fc81ee095c317261659713181118562cade7ef514a14e0df6'
 LIST_ID = 1
 HEADERS = {'Api-Token': API_TOKEN}
-MENSAGEM_DE_RESPOSTA = "Exemplo"
-MENSAGEM_DE_ERRO_EMAIL = "Erro"
+MENSAGEM_DE_RESPOSTA = "✅ E-mail cadastrado com sucesso"
+MENSAGEM_DE_ERRO_EMAIL = "❌ E-mail invalido, verifique e digite novamente"
 
 @app.route('/email', methods=['POST'])
 def save_email():
