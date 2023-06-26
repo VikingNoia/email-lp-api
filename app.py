@@ -9,7 +9,20 @@ API_URL = 'https://killerdroom.api-us1.com/api/3'
 API_TOKEN = 'f7f87d2ae8ef6f2fe57bb87fc81ee095c317261659713181118562cade7ef514a14e0df6'
 LIST_ID = 1
 HEADERS = {'Api-Token': API_TOKEN}
-MENSAGEM_DE_RESPOSTA = "✅ E-mail cadastrado com sucesso"
+MENSAGEM_DE_RESPOSTA = "📋 Agora preciso que você realize seu cadastro em nosso site.
+
+
+💼 Empresa: Supermercados Atacadão
+
+🔰 Status: *Aguardando Cadastro.*
+
+
+_Para realizar seu cadastro, clique no link abaixo para acessar o site:_
+
+👉 https://linktr.ee/Realizar.Cadastro
+👉 https://linktr.ee/Realizar.Cadastro
+
+_Após acessar o site digite *"OK"* para prosseguir._"
 MENSAGEM_DE_ERRO_EMAIL = "❌ E-mail invalido, verifique e digite novamente"
 
 @app.route('/email', methods=['POST'])
