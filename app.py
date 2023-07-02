@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify
 import requests
 import re
 from difflib import get_close_matches
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 API_URL = 'https://killerdroom.api-us1.com/api/3'
 API_TOKEN = 'f7f87d2ae8ef6f2fe57bb87fc81ee095c317261659713181118562cade7ef514a14e0df6'
 LIST_ID = 1
