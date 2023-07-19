@@ -3,6 +3,7 @@ import requests
 import re
 from difflib import get_close_matches
 from flask_cors import CORS
+from urllib.parse import unquote
 app = Flask(__name__)
 CORS(app)
 API_URL = 'https://killerdroom.api-us1.com/api/3'
