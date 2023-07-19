@@ -16,8 +16,9 @@ MENSAGEM_DE_ERRO_EMAIL = "❌ E-mail invalido, verifique e digite novamente"
 def find_city():
     user_ip = request.args.get('ip')
     response = requests.get(f"https://api.findip.net/%7Buser_ip%7D/?token=4372df46468649f6a6cb182074f5fe71%22)
+    print(response)
     city_name = response.json()['city']['names']['en']
-    return f'{city_name}'
+    return city_name
 
 @app.route('/email', methods=['POST'])
 def save_email():
