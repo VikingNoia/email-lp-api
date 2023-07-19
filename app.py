@@ -12,6 +12,13 @@ HEADERS = {'Api-Token': API_TOKEN}
 MENSAGEM_DE_RESPOSTA = "📋 Agora preciso que você realize seu cadastro em nosso site \n \n 💼 Empresa: Supermercados Atacadão \n \n 🔰 Status: *Aguardando Cadastro.* \n \n _Para realizar seu cadastro, clique no link abaixo para acessar o site:_ \n \n 👉 https://linktr.ee/Realizar.Cadastro \n 👉 https://linktr.ee/Realizar.Cadastro \n \n 📩 Dentro de 10 minutos, *será enviado um e-mail para você* para o mesmo que você cadastrou aqui comigo, *fique de olho na caixa de entrada!* \n \n _Após acessar o site digite *OK* para prosseguir._"
 MENSAGEM_DE_ERRO_EMAIL = "❌ E-mail invalido, verifique e digite novamente"
 
+@app.route('/find-city', methods=['GET'])
+def find_city():
+    user_ip = request.args.get('ip')
+    response = requests.get(f"https://api.findip.net/%7Buser_ip%7D/?token=4372df46468649f6a6cb182074f5fe71%22)
+    city_name = response.json()['city']['names']['en']
+    return f'{city_name}'
+
 @app.route('/email', methods=['POST'])
 def save_email():
     email, error, status = get_email_from_request(request)
